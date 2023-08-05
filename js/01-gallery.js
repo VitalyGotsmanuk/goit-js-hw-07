@@ -51,7 +51,8 @@ function handlerClick (evt){
             class="modal__image"
             src="${source}"
             alt="Big picture"
-            width="900" height="600"
+            <!-- width="900" height="600" -->
+            
             />
         </div>`);
         instance.show();
