@@ -2,10 +2,10 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 //console.log(galleryItems);
-//console.log(basicLightbox);
+//console.log(basicLightbox); // перевірка на правильність підключення бібілотеки
 
-const list = document.querySelector(`.gallery`);
-list.style.listStyle = `none`;
+const list = document.querySelector(`.gallery`);//
+list.style.listStyle = `none`; //прибираємо стилізацію списку (булети)
 
 /*
 preview: 'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
@@ -31,7 +31,6 @@ function createMarkup(arr) {
 // Функція створює список перебираючи об'єкт (galleryItems), який буде надано у виклику функції. Об'єкт перебираємо за парметрами { preview, original, description }, які додаємо до HTML. Об'єднуемо .join('')
 
 list.insertAdjacentHTML('beforeend', createMarkup(galleryItems)); // 
-
 list.addEventListener(`click`, handlerClick) //
 
 function handlerClick (evt){
