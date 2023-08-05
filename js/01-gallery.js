@@ -37,8 +37,7 @@ function handlerClick (evt){
     evt.preventDefault(); // забороняємо події за замочуванням.
     
     if (!evt.target.classList.contains('gallery__image')) //Якщо evt.target не (!) містить клас gallery__imag, то 
-    { return // виходимо з функції
-    }
+    { return } // виходимо з функції
 
     // console.log(`target`, evt.target)
     const currentImg = evt.target.closest(`.gallery__image`);
