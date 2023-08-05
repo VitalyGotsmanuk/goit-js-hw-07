@@ -1,7 +1,7 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-//console.log(galleryItems);
+console.log(galleryItems);
 //console.log(basicLightbox); // перевірка на правильність підключення бібілотеки
 
 const list = document.querySelector(`.gallery`);//
@@ -56,11 +56,13 @@ function handlerClick (evt){
             />
         </div>`);
         instance.show();
-        return;
+        //return;
 
-    // if (evt.target === evt.currentTarget){
-    //      return
-    // }  
+    list.addEventListener (`keydown`, (evt => {
+        if(evt.code === `Escape`) {
+            instance.close();
+        }
+    }));
 
     //console.log(`currentTarget`, evt.currentTarget)
 }

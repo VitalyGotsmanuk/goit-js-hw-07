@@ -1,7 +1,7 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-//console.log(galleryItems);
+console.log(galleryItems);
 //console.log(SimpleLightbox); // обидва слова з великої літери!
 
 const list = document.querySelector(`.gallery`);
@@ -26,7 +26,6 @@ function createMarkup(arr) {
     `
     ).join('')
 }
-
 list.insertAdjacentHTML('beforeend', createMarkup(galleryItems)); // 
 
 //list.addEventListener(`click`, handlerClick) 
