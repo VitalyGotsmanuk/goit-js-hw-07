@@ -1,10 +1,10 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-console.log(galleryItems);
+console.log(galleryItems); // Перевірка, чи бачить наш код об'єкт galleryItems
 //console.log(basicLightbox); // перевірка на правильність підключення бібілотеки
 
-const list = document.querySelector(`.gallery`);//
+const list = document.querySelector(`.gallery`);// зміна list стврюється на 
 list.style.listStyle = `none`; //прибираємо стилізацію списку (булети)
 
 /*
@@ -51,8 +51,7 @@ function handlerClick (evt){
             class="modal__image"
             src="${source}"
             alt="Big picture"
-            <!-- width="900" height="600" -->
-            
+            width="900" height="600"            
             />
         </div>`);
         instance.show();
