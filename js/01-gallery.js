@@ -4,7 +4,7 @@ import { galleryItems } from './gallery-items.js';
 console.log(galleryItems); // Перевірка, чи бачить наш код об'єкт galleryItems
 //console.log(basicLightbox); // перевірка на правильність підключення бібілотеки
 
-const list = document.querySelector(`.gallery`);// зміна list стврюється на 
+const list = document.querySelector(`.gallery`);// зміна list стврюється на ul class="gallery"
 list.style.listStyle = `none`; //прибираємо стилізацію списку (булети)
 
 /*
@@ -30,8 +30,8 @@ function createMarkup(arr) {
 }
 // Функція створює список перебираючи об'єкт (galleryItems), який буде надано у виклику функції. Об'єкт перебираємо за парметрами { preview, original, description }, які додаємо до HTML. Об'єднуемо .join('')
 
-list.insertAdjacentHTML('beforeend', createMarkup(galleryItems)); // 
-list.addEventListener(`click`, handlerClick) //
+list.insertAdjacentHTML('beforeend', createMarkup(galleryItems)); // До list через виклик createMarkup додаємо список що створений обробкою galleryItems за шаблоном 
+list.addEventListener(`click`, handlerClick) //Додаємо прослуховування на клік на список gallery
 
 function handlerClick (evt){
     evt.preventDefault(); // забороняємо події за замочуванням.
@@ -40,28 +40,29 @@ function handlerClick (evt){
     { return } // виходимо з функції
 
     // console.log(`target`, evt.target)
-    const currentImg = evt.target.closest(`.gallery__image`);
-    const {source} = currentImg.dataset;
+    const currentImg = evt.target.closest(`.gallery__image`);// визнвачаємо змінну, в якій фіксуємо ту картинку по якій клікнули
+    const {source} = currentImg.dataset; // з поточної картинки дістаємо значення з data - data-source
     
     //console.log(source)
 
+    //створюємо змінну instance за допомогою basicLightbox, в адресі до картинки ставимо змінну, яка визначена у source. 
     const instance = basicLightbox.create(`
 	    <div class="box">
             <img
             class="modal__image"
-            src="${source}"
+            src="${source}" 
             alt="Big picture"
             width="900" height="600"            
             />
         </div>`);
-        instance.show();
-        //return;
-
+        instance.show();//команда виводить модальне вікно від basicLightbox
+        
     list.addEventListener (`keydown`, (evt => {
         if(evt.code === `Escape`) {
             instance.close();
         }
     }));
+    //
 
     //console.log(`currentTarget`, evt.currentTarget)
 }
