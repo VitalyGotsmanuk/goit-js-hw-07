@@ -59,10 +59,9 @@ function handlerClick (evt){
         
     list.addEventListener (`keydown`, (evt => {
         if(evt.code === `Escape`) {
-            instance.close();
+            instance.close();// при натисканні Escape закривається модальне вікно.
         }
-    }));
-    //
+    })); //Додаємо прослховувач на список на натискання Escape 
 
     //console.log(`currentTarget`, evt.currentTarget)
 }

@@ -26,7 +26,7 @@ function createMarkup(arr) {
     `
     ).join('')
 }
-list.insertAdjacentHTML('beforeend', createMarkup(galleryItems)); // 
+list.insertAdjacentHTML('beforeend', createMarkup(galleryItems)); // так само як і в першому файлф 01 
 
 //list.addEventListener(`click`, handlerClick) 
 
@@ -43,6 +43,6 @@ list.insertAdjacentHTML('beforeend', createMarkup(galleryItems)); //
 // }
 
 var lightbox = new SimpleLightbox('.gallery a', { 
-    captionsData: `alt`,
-    captionDelay: 250,
- });
+    captionsData: `alt`, // опис картинки
+    captionDelay: 250, // затримка показу в мс
+ }); // SimpleLightbox все робить сам, але на картинках gallery має бути лінк href="${original}
